@@ -51,8 +51,8 @@
 		4A7CABBF2AAF5715006784C7 /* NetworkingSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				4A7CABC02AAF5715006784C7 /* NetworkingSwiftUIApp.swift */,
-				4A7CABC22AAF5715006784C7 /* ContentView.swift */,
+				4A7CABCE2AAF5A3B006784C7 /* App */,
+				4A7CABCF2AAF5A50006784C7 /* Core */,
 				4A7CABC42AAF5717006784C7 /* Assets.xcassets */,
 				4A7CABC62AAF5717006784C7 /* Preview Content */,
 			);
@@ -65,6 +65,54 @@
 				4A7CABC72AAF5717006784C7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A7CABCE2AAF5A3B006784C7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4A7CABC02AAF5715006784C7 /* NetworkingSwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4A7CABCF2AAF5A50006784C7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4A7CABD02AAF5A60006784C7 /* AllCoins */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4A7CABD02AAF5A60006784C7 /* AllCoins */ = {
+			isa = PBXGroup;
+			children = (
+				4A7CABD32AAF5A87006784C7 /* Model */,
+				4A7CABD22AAF5A7E006784C7 /* View */,
+				4A7CABD12AAF5A73006784C7 /* ViewModel */,
+			);
+			path = AllCoins;
+			sourceTree = "<group>";
+		};
+		4A7CABD12AAF5A73006784C7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A7CABD22AAF5A7E006784C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A7CABC22AAF5715006784C7 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A7CABD32AAF5A87006784C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
