@@ -8,22 +8,22 @@
 import SwiftUI
 
 class CoinsViewModel: ObservableObject{
-    @Published var coin = ""
-    @Published var price = ""
-    @Published var errorMessage: String?
+    
+    @Published var coins = [Coin]()
     
     private let service = CoinDataService()
     
     init() {
-        fetchPrice(coin: "bitcoin")
+        //fetchPrice(coin: "bitcoin")
+        fetchCoins()
     }
     
-    func fetchPrice(coin: String) {
-        service.fetchPrice(coin: coin) { priceFromService in
+    func fetchCoins() {
+        service.fetchCoins { coins in
             DispatchQueue.main.async {
-                self.coin = coin
-                self.price = "$\(priceFromService)"
+                self.coins = coins
             }
         }
     }
+    
 }
