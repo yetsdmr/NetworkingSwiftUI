@@ -11,6 +11,26 @@ class CoinDataService {
     
     private let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order-market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=24h&Localesen"
     
+    func fetchCoinsCompletionHandlers() async throws -> [Coin] {
+        guard let url = URL(string: urlString) else { return []  }
+        
+        print ("DEBUG: Fetching data..")
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let coins = try JSONDecoder().decode([Coin].self, from: data)
+            return coins
+        } catch {
+            print("DEBUG: Error \(error.localizedDescription)")
+            return [] 
+        }
+        
+    }
+}
+
+// MARK: Completion Handlers
+
+extension CoinDataService {
+    
     func fetchCoinsWithResult(completion: @escaping(Result<[Coin], CoinAPIError>) -> Void) {
         guard let url = URL(string: urlString) else { return }
         

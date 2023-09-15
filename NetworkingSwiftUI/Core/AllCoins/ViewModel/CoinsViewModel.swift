@@ -17,7 +17,8 @@ class CoinsViewModel: ObservableObject{
     init() {
         //fetchPrice(coin: "bitcoin")
         //fetchCoins()
-        fetchCoinsWithResult()
+        //fetchCoinsWithResult()
+        Task { try await fetchCoinsCompletionHandlers() }
     }
     
     func fetchCoins() {
@@ -44,6 +45,10 @@ class CoinsViewModel: ObservableObject{
                 }
             }
         }
+    }
+    
+    func fetchCoinsCompletionHandlers() async throws {
+        self.coins = try await service.fetchCoinsCompletionHandlers()
     }
     
 }
